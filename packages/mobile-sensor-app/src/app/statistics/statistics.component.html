@@ -1,0 +1,14 @@
+<h1>Statistics</h1>
+
+<h2>Mean Acceleration</h2>
+
+<ngx-charts-bar-horizontal
+style="display: block; width: 900px; height: 800px;"
+  [view]="[640, 300]"
+  [results]="accelerationMean$ | async"
+  [xAxis]="true"
+  [yAxis]="true"
+  xScaleMin="-1"
+  xScaleMax="1"
+>
+</ngx-charts-bar-horizontal>

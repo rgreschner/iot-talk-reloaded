@@ -1,0 +1,10 @@
+{
+  "name": "iot-talk-reloaded",
+  "description": "My MongoDB IoT Talk - Kinda Reloaded...",
+  "author": "Ralph Greschner <ralph.greschner@gmail.com> (http://www.ralph-greschner.de)",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.10.1"
+  }
+}
