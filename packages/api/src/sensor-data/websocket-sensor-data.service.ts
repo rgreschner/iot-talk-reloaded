@@ -45,7 +45,7 @@ export class WebsocketService implements OnGatewayConnection {
     }
     try {
       const sensorData = this.mapSensorDataFromEvent(event);
-      await this._sensorDataRepository.insertOne(sensorData);
+      await this._sensorDataRepository.addSensorData(sensorData);
     } catch (err) {
       logger.error({ err }, 'Error persisting pushed sensor data.');
     }

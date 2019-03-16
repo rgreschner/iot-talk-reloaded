@@ -61,4 +61,8 @@ export class SensorDataRepository extends BaseRepository<GenericSensorData> {
       SensorDataRepository.COLLECTION_NAME
     );
   }
+
+  public addSensorData(sensorData: GenericSensorData) {
+    return this.insertOne(sensorData);
+  }
 }
