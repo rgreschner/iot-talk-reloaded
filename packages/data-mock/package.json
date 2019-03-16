@@ -1,6 +1,6 @@
 {
   "name": "data-mock",
-  "version": "0.0.42",
+  "version": "0.8.0",
   "description": "Data Replay Tool",
   "scripts": {
     "build": "rimraf ./dist && tsc",

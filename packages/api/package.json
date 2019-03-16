@@ -1,6 +1,6 @@
 {
   "name": "api",
-  "version": "0.0.42",
+  "version": "0.8.0",
   "description": "RESTful API & WebSocket Service.",
   "author": "Ralph Greschner <ralph.greschner@gmail.com> (http://www.ralph-greschner.de)",
   "license": "MIT",
