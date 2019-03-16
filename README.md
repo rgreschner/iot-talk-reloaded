@@ -3,9 +3,6 @@
 This is a rehash of a talk I did at the MongoDB User Group Mannheim in 2015.
 This time reloaded with more fancy stuff like Angular, NestJS and Nyancat.
 
-**TODO**: Schema needs optimization as outlined in MongoDB Whitepaper "Time Series Data and MongoDB: Best
-Practices Guide".
-
 ## Getting Started
 
 Instructions for getting up and running ;)
