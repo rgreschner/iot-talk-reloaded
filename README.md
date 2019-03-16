@@ -3,9 +3,6 @@
 This is a rehash of a talk I did at the MongoDB User Group Mannheim in 2015.
 This time reloaded with more fancy stuff like Angular, NestJS and Nyancat.
 
-**TODO**: Schema needs optimization as outlined in MongoDB Whitepaper "Time Series Data and MongoDB: Best
-Practices Guide".
-
 ## Getting Started
 
 Instructions for getting up and running ;)
@@ -65,6 +62,7 @@ Swagger API Documentation is provided by NestJS Swagger plugin on endpoint `/swa
 You may start the project by invoking `npm run`.
 After start, the Data Replay Tool will ask for confirmation before sending mock data.
 Enter "y" or "Yes" to do so or cancel by doing otherwise.
+Alternatively you may start the data mock tool with commandline parameter `-y`, this will skip the confirmation prompt completely.
 
 **Note:** MongoDB instance needs to be running beforehand, collection `sensorDataMock`.
 

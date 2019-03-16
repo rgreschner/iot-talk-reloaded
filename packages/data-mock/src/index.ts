@@ -15,7 +15,8 @@ import {
   DATABASE_CONNECTION_RETRY_INTERVAL_SECONDS,
   HOST,
   SENSOR_DATA_COLLECTION_NAME,
-  WEBSOCKET_CHANNEL_SENSOR_DATA_PUSH
+  WEBSOCKET_CHANNEL_SENSOR_DATA_PUSH,
+  USE_ORIGINAL_TIMESTAMP
 } from './config.const';
 import {
   EXIT_CODE_CONNECTION_ERROR,
@@ -89,7 +90,9 @@ const connectToMongoDB = async () => {
  */
 const sendSensorData = (socket: any, sensorData: GenericSensorData) => {
   delete sensorData._id;
-  sensorData.payload.ts = new Date();
+  if (!USE_ORIGINAL_TIMESTAMP) {
+    sensorData.payload.ts = new Date();
+  }
   socket.emit(WEBSOCKET_CHANNEL_SENSOR_DATA_PUSH, { ...sensorData });
 };
 
@@ -99,7 +102,9 @@ const sendSensorData = (socket: any, sensorData: GenericSensorData) => {
  */
 const sendMockData = async (sensorDataCollection: Collection) => {
   let currentDateInData = null;
-  const cursor: Cursor = sensorDataCollection.find().sort({ 'payload.ts': 1 });
+  const cursor: Cursor = sensorDataCollection
+    .find()
+    .sort({ 'payload.ts': 1 });
   const count = await cursor.count();
   const progress = nyanProgress();
   progress.start({ message: NYAN_MESSAGES, total: count });
@@ -126,7 +131,8 @@ const sendMockData = async (sensorDataCollection: Collection) => {
 const main = async () => {
   console.log(TITLE);
   console.log('='.repeat(TITLE.length));
-  const ready = await askUserReady();
+  const skipUserReady = process.argv.indexOf('-y') >= 0;
+  const ready = skipUserReady || (await askUserReady());
   if (!ready) {
     process.exit(0);
   }

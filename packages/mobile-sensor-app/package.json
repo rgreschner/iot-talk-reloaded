@@ -1,6 +1,6 @@
 {
   "name": "mobile-sensor-app",
-  "version": "0.0.42",
+  "version": "0.8.0",
   "author": "Ralph Greschner <ralph.greschner@gmail.com> (http://www.ralph-greschner.de)",
   "license": "MIT",
   "scripts": {
